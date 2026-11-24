@@ -1,0 +1,30 @@
+# Coordonnées et horaires de la mairie — utilisés dans l'en-tête, le pied de page et les pages.
+# Modifier ici une seule fois : tout le site se met à jour.
+# Sources : annuaire de l'administration Service-Public (fiche « Mairie - Valette », mise à jour
+# le 27 août 2024) et coordonnées publiées par la mairie (12 rue des Écoliers).
+
+nom: "Mairie de Valette"
+adresse_ligne1: "12 rue des Écoliers"
+adresse_ligne2: "15400 Valette"
+telephone: "04 71 78 00 41"
+telephone_lien: "+33471780041"
+email: "mairievalette@orange.fr"
+
+# Horaires d'ouverture du secrétariat de mairie
+horaires_court: "le lundi, le mardi, le jeudi et le vendredi, de 9 h à 12 h"
+horaires_note: "Fermée le mercredi, le samedi et le dimanche."
+horaires:
+  - jour: Lundi
+    matin: "9 h – 12 h"
+  - jour: Mardi
+    matin: "9 h – 12 h"
+  - jour: Mercredi
+    ferme: true
+  - jour: Jeudi
+    matin: "9 h – 12 h"
+  - jour: Vendredi
+    matin: "9 h – 12 h"
+  - jour: Samedi
+    ferme: true
+  - jour: Dimanche
+    ferme: true

@@ -1,0 +1,162 @@
+---
+layout: default
+title: Accueil
+permalink: /
+classe_corps: page-accueil
+description: "Valette (Cantal), village de la vallée de la Sumène, près de Riom-ès-Montagnes : infos et alertes de la mairie, horaires, conseil municipal, vie pratique, vie locale et patrimoine."
+---
+{%- assign m = site.data.mairie -%}
+{%- include bandeau-annonce.html -%}
+{%- assign alerte = nil -%}
+{%- for it in site.data.infos_alertes -%}{%- if it.type == "alerte" -%}{%- assign alerte = it -%}{%- break -%}{%- endif -%}{%- endfor -%}
+{%- if alerte %}
+{%- capture ancre_alerte -%}{{ alerte.date }}-{{ alerte.titre | slugify: "latin" }}{%- endcapture -%}
+<div class="bandeau-alerte" role="region" aria-label="Alerte de la mairie" data-bandeau-date="{{ alerte.date }}"{% if alerte.bandeau_jusquau %} data-bandeau-fin="{{ alerte.bandeau_jusquau }}"{% endif %} hidden>
+  <div class="conteneur">
+    {% include icone.html nom="alerte" %}
+    <div class="bandeau-alerte-texte">
+      <p class="bandeau-alerte-titre">Alerte : {{ alerte.titre }}</p>
+      <p>{{ alerte.resume }}</p>
+    </div>
+    {%- if alerte.pdf %}
+    <a class="bouton bouton--clair" href="{{ '/documents/infos-alertes/' | append: alerte.pdf | relative_url }}" target="_blank" rel="noopener">Lire l'alerte (PDF)</a>
+    {%- else %}
+    <a class="bouton bouton--clair" href="{{ '/infos-alertes/' | relative_url }}#{{ ancre_alerte }}">Lire l'alerte</a>
+    {%- endif %}
+  </div>
+</div>
+{%- endif %}
+
+<section class="heros" style="--image-heros: url('{{ '/assets/images/village-valette.jpg' | relative_url }}')" aria-labelledby="titre-accueil">
+  <div class="conteneur">
+    <div class="heros-contenu">
+      <h1 id="titre-accueil">Bienvenue à <span class="nom-commune">Valette</span></h1>
+      <p>Un village de la vallée de la Sumène, au nord-ouest du Cantal, à quatre kilomètres de Riom-ès-Montagnes.</p>
+      <ul class="heros-chiffres" aria-label="Valette en chiffres">
+        <li><span class="heros-chiffre">236</span><span>habitants</span></li>
+        <li><span class="heros-chiffre">892 m</span><span>altitude du bourg</span></li>
+        <li><span class="heros-chiffre">15,1 km²</span><span>de superficie</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<nav class="conteneur acces-rapides" aria-label="Accès rapides de l'accueil">
+  <ul>
+    <li><a href="{{ '/infos-alertes/' | relative_url }}"><span class="pastille pastille--alerte">{% include icone.html nom="alerte" %}</span>Infos &amp; Alertes</a></li>
+    <li><a href="{{ '/mairie/' | relative_url }}#contact"><span class="pastille">{% include icone.html nom="horloge" %}</span>Horaires et contact</a></li>
+    <li><a href="{{ '/conseil-municipal/' | relative_url }}"><span class="pastille">{% include icone.html nom="personnes" %}</span>Conseil municipal</a></li>
+    <li><a href="{{ '/vie-pratique/' | relative_url }}"><span class="pastille">{% include icone.html nom="maison" %}</span>Vie pratique</a></li>
+    <li><a href="{{ '/decouvrir/' | relative_url }}#patrimoine"><span class="pastille">{% include icone.html nom="eglise" %}</span>Patrimoine</a></li>
+  </ul>
+</nav>
+
+<section class="section" aria-labelledby="titre-infos">
+  <div class="conteneur accueil-infos">
+    <div>
+      <div class="section-entete">
+        <div>
+          <h2 id="titre-infos">Infos &amp; Alertes</h2>
+          <p>Les derniers avis de la mairie.</p>
+        </div>
+        <a class="lien-fleche" href="{{ '/infos-alertes/' | relative_url }}">Tous les avis{% include icone.html nom="fleche" %}</a>
+      </div>
+      <div class="liste-avis">
+        {%- for it in site.data.infos_alertes limit: 3 %}
+        {% include avis.html item=it compact=true %}
+        {%- endfor %}
+      </div>
+    </div>
+    <aside class="carte carte-mairie" aria-labelledby="titre-mairie">
+      <h3 id="titre-mairie">La mairie</h3>
+      <div class="coordonnees">
+        <p>{% include icone.html nom="lieu" %}<span>{{ m.adresse_ligne1 }}<br>{{ m.adresse_ligne2 }}</span></p>
+        <p>{% include icone.html nom="telephone" %}<a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a></p>
+        <p>{% include icone.html nom="email" %}<a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a></p>
+      </div>
+      {% include horaires.html %}
+      <p class="note">Le secrétariat de mairie est ouvert au public le matin, du lundi au vendredi, sauf le mercredi.</p>
+      <a class="lien-fleche" href="{{ '/mairie/' | relative_url }}">La mairie et vos démarches{% include icone.html nom="fleche" %}</a>
+    </aside>
+  </div>
+</section>
+
+{%- assign aujourdhui = site.time | date: "%Y-%m-%d" -%}
+{%- assign a_venir = 0 -%}
+{%- for ev in site.data.agenda -%}{%- assign fin = ev.fin | default: ev.date -%}{%- if fin >= aujourdhui -%}{%- assign a_venir = a_venir | plus: 1 -%}{%- endif -%}{%- endfor -%}
+{%- if a_venir > 0 %}
+
+<section class="section section--teintee" aria-labelledby="titre-agenda">
+  <div class="conteneur">
+    <div class="section-entete">
+      <div>
+        <h2 id="titre-agenda">À ne pas manquer</h2>
+        <p>Les prochains rendez-vous de la commune et des associations.</p>
+      </div>
+      <a class="lien-fleche" href="{{ '/vie-locale/' | relative_url }}#agenda">Tous les rendez-vous{% include icone.html nom="fleche" %}</a>
+    </div>
+    {% include agenda.html limite=6 %}
+  </div>
+</section>
+{%- endif %}
+
+<section class="section{% if a_venir == 0 %} section--teintee{% endif %}" aria-labelledby="titre-decouvrir">
+  <div class="conteneur">
+    <div class="section-entete">
+      <div>
+        <h2 id="titre-decouvrir">Découvrir Valette</h2>
+        <p>Des hameaux de pierre, une rivière, ses ponts et ses moulins, et des sentiers balisés au départ du bourg.</p>
+      </div>
+      <a class="lien-fleche" href="{{ '/decouvrir/' | relative_url }}">La commune et son patrimoine{% include icone.html nom="fleche" %}</a>
+    </div>
+    <div class="grille-cartes">
+      <article class="carte carte-article">
+        <div class="carte-article-corps">
+          <p class="surtitre">Patrimoine</p>
+          <h3><a class="lien-etendu" href="{{ '/decouvrir/' | relative_url }}#hameaux">Peyre Grosse, Roche et Marcombes</a></h3>
+          <p>Un village bâti en arête de poisson, une chapelle avec vue sur le Sancy, un four à pain, un calvaire et un passage voûté : les hameaux de la commune ont gardé leur caractère.</p>
+        </div>
+      </article>
+      <article class="carte carte-article">
+        <div class="carte-article-corps">
+          <p class="surtitre">Au fil de l'eau</p>
+          <h3><a class="lien-etendu" href="{{ '/decouvrir/' | relative_url }}#sumene">La vallée de la Sumène</a></h3>
+          <p>Le très ancien pont de la Cliotte, le pont de Pradal, le moulin de Pradal, dernier des quatre moulins de la vallée sur la commune, et la cascade du Gour.</p>
+        </div>
+      </article>
+      <article class="carte carte-article">
+        <div class="carte-article-corps">
+          <p class="surtitre">Randonnée</p>
+          <h3><a class="lien-etendu" href="{{ '/decouvrir/' | relative_url }}#randonnees">Trois boucles balisées au départ du bourg</a></h3>
+          <p>Les Eaux vives et Les Vaches rouges à pied, Les Hauts plateaux à VTT : des itinéraires de l'office de tourisme, entre rivière, hameaux et estives.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section{% if a_venir > 0 %} section--teintee{% endif %}" aria-labelledby="titre-elus">
+  <div class="conteneur">
+    <div class="section-entete">
+      <div>
+        <h2 id="titre-elus">Vos élus</h2>
+        <p>Le maire et ses trois adjoints, élus en mars 2026.</p>
+      </div>
+      <a class="lien-fleche" href="{{ '/conseil-municipal/' | relative_url }}">Le conseil municipal{% include icone.html nom="fleche" %}</a>
+    </div>
+    {%- assign e = site.data.elus %}
+    <div class="grille-4">
+      <div class="panneau carte-elu">
+        <p class="fonction">{{ e.maire.fonction }}</p>
+        <p class="nom">{{ e.maire.nom }}</p>
+      </div>
+      {%- for a in e.adjoints %}
+      <div class="panneau carte-elu">
+        <p class="fonction">{{ a.fonction | replace: "1er", "1<sup>er</sup>" | replace: "2e", "2<sup>e</sup>" | replace: "3e", "3<sup>e</sup>" }}</p>
+        <p class="nom">{{ a.nom }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+    <p class="note">Pour joindre un élu, contactez la mairie au <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a>.</p>
+  </div>
+</section>

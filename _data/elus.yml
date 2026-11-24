@@ -1,0 +1,41 @@
+# Conseil municipal élu le 15 mars 2026 (onze conseillers) ; maire et adjoints élus le 22 mars 2026.
+# Source : Répertoire national des élus (ministère de l'Intérieur), version du 20 novembre 2026.
+
+election: "15 mars 2026"
+installation: "22 mars 2026"
+
+maire:
+  nom: "Frédéric Duval"
+  fonction: "Maire"
+
+adjoints:
+  - nom: "Raphaël Borie"
+    fonction: "1er adjoint"
+  - nom: "Annette Rebours"
+    fonction: "2e adjointe"
+  - nom: "Paul Serre"
+    fonction: "3e adjoint"
+
+# Ordre alphabétique
+conseillers:
+  - "Georges Chabaud"
+  - "Claire Chalvignac"
+  - "Sarah Crozemarie"
+  - "Marc Debruyne"
+  - "Chantal Gasquet"
+  - "Tiffany Laporte"
+  - "Christophe Veschambre"
+
+# Délégué de la commune au conseil communautaire du Pays Gentiane
+conseiller_communautaire: "Frédéric Duval"
+
+# Les séances du conseil municipal (la plus récente en haut), à partir des avis de la mairie.
+# Aucune séance n'a encore été annoncée : la liste est vide ([]).
+#
+# Modèle (remplacer la ligne [] par une ou plusieurs séances) :
+#   - date: "AAAA-MM-JJ"
+#     quand: "Vendredi 4 décembre 2026 à 20 h"
+#     ordre_du_jour:
+#       - "Premier point"
+#       - "Deuxième point"
+seances: []

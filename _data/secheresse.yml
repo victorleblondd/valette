@@ -1,0 +1,21 @@
+# =====================================================================
+#  SÉCHERESSE : RESTRICTIONS DES USAGES DE L'EAU
+#  Encadrés de la page Infos & Alertes et rubrique « Sécheresse » de la page Vie pratique.
+#
+#  actif: true      afficher les encadrés (restrictions en cours)
+#  actif: false     les masquer (restrictions levées)
+#
+#  Source : vigieau.gouv.fr (consulté le 24 novembre 2026) : aucune restriction des usages
+#  de l'eau en vigueur pour la commune. Les arrêtés de l'automne 2026 s'appliquaient
+#  jusqu'au 31 octobre 2026.
+#  Exemple, si de nouvelles restrictions sont décidées :
+#    actif: true
+#    niveau: "alerte"
+#    niveau_libelle: "niveau d'alerte"
+#    arrete: "arrêté préfectoral en vigueur du 1er au 31 juillet 2027"
+# =====================================================================
+
+actif: false
+niveau: ""
+niveau_libelle: ""
+arrete: ""

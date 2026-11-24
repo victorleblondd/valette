@@ -1,0 +1,16 @@
+# Fichiers que GitHub va chercher automatiquement et ajouter au site
+# (programme : outils/recuperer_fichiers.py, lancé par .github/workflows/recuperer-fichiers.yml).
+#
+# Une ligne par fichier :  adresse-source   chemin-dans-le-site   [largeur maximale]   [rognage en bas, en %]
+# - Si le chemin se termine par .pdf et que la source est une image (affiche), elle est convertie en PDF A4.
+#   Plusieurs images séparées par « | » (sans espace) donnent un PDF de plusieurs pages.
+# - Pour une photo .jpg : la troisième colonne donne la largeur maximale, la quatrième (facultative)
+#   le pourcentage de la hauteur retiré en bas de la photo.
+# - Un fichier déjà présent dans le site n'est jamais téléchargé une deuxième fois.
+
+# Photo de l'accueil : le village de Valette (France64160, Wikimedia Commons, CC BY-SA 4.0),
+# réduite à 1 600 px de large et rognée de 5 % en bas (l'ombre du photographe y apparaissait)
+https://upload.wikimedia.org/wikipedia/commons/6/6b/Village_de_Valette_%28Cantal%29.JPG  assets/images/village-valette.jpg  1600  5
+
+# Photo de la page Découvrir : le bourg et l'église Saint-Augustin (WCOMFR, Wikimedia Commons, CC BY 4.0)
+https://upload.wikimedia.org/wikipedia/commons/1/13/Valette.jpg  assets/images/eglise-valette.jpg  800

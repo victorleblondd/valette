@@ -1,0 +1,92 @@
+---
+title: "Vie locale"
+permalink: /vie-locale/
+chapo: "Les restaurants, les rendez-vous, les associations et la salle polyvalente de la commune."
+description: "Vie locale à Valette : l'Auberge L'Amandine et O'Sceno, les prochains rendez-vous, le comité des fêtes, le club Tamalou et son thé dansant, l'association des parents d'élèves, la chasse et la salle polyvalente Garibaldi-Serre."
+---
+{%- assign m = site.data.mairie -%}
+<nav class="sommaire" aria-label="Sur cette page">
+  <ul>
+    <li><a href="#restaurants">Restaurants</a></li>
+    <li><a href="#agenda">Rendez-vous</a></li>
+    <li><a href="#associations">Associations</a></li>
+    <li><a href="#salle">Salle polyvalente</a></li>
+  </ul>
+</nav>
+
+<section class="bloc" id="restaurants" aria-labelledby="titre-restaurants">
+  <h2 id="titre-restaurants" class="titre-decore">Les restaurants</h2>
+  <div class="grille-3">
+    <div class="panneau">
+      <p class="surtitre">Restaurant · dans le bourg</p>
+      <h3>Auberge L'Amandine</h3>
+      <p>Une cuisine traditionnelle, servie le midi et le soir, dans un cadre lumineux et convivial.</p>
+      <div class="coordonnees">
+        <p>{% include icone.html nom="lieu" %}<span>Le Bourg, 15400 Valette</span></p>
+        <p>{% include icone.html nom="telephone" %}<a href="tel:+33471780283">04 71 78 02 83</a></p>
+        <p>{% include icone.html nom="externe" %}<a href="http://www.restaurant-lamandine-valette15.fr" rel="noopener">restaurant-lamandine-valette15.fr</a></p>
+      </div>
+    </div>
+    <div class="panneau">
+      <p class="surtitre">Restaurant · musique · à Marcombes</p>
+      <h3>O'Sceno</h3>
+      <p>Sur un site de 34 hectares, à plus de 1 000 mètres d'altitude : un restaurant avec musique acoustique en direct, des grillades et une salle de jeux pour les enfants. Ouvert les vendredis, samedis et dimanches soir, et le dimanche midi.</p>
+      <div class="coordonnees">
+        <p>{% include icone.html nom="lieu" %}<span>1 la Banne, Marcombes, 15400 Valette</span></p>
+        <p>{% include icone.html nom="telephone" %}<a href="tel:+33984307919">09 84 30 79 19</a></p>
+      </div>
+    </div>
+    <div class="panneau panneau--info">
+      <h3>Les autres commerces</h3>
+      <p>Les commerces et les services les plus proches se trouvent à Riom-ès-Montagnes, à quatre kilomètres.</p>
+      <p>Vous exercez une activité à Valette (vente à la ferme, artisanat, hébergement) et souhaitez figurer sur ce site ? Contactez la mairie.</p>
+    </div>
+  </div>
+  <p class="note bloc-suite">Présentations et jours d'ouverture donnés à titre indicatif, d'après l'office de tourisme Destination Haut Cantal : renseignez-vous auprès des établissements.</p>
+</section>
+
+<section class="bloc" id="agenda" aria-labelledby="titre-agenda">
+  <h2 id="titre-agenda" class="titre-decore">Les prochains rendez-vous</h2>
+  <p class="bloc-intro">Les rendez-vous de la commune et des associations. Vous organisez un événement à Valette ? Faites-le savoir à la mairie.</p>
+  {% include agenda.html %}
+</section>
+
+<section class="bloc" id="associations" aria-labelledby="titre-associations">
+  <h2 id="titre-associations" class="titre-decore">Les associations</h2>
+  <div class="grille-2">
+    <div class="panneau">
+      <h3>Le comité des fêtes de Valette</h3>
+      <p>Créé en 1977, il anime la vie du village.</p>
+    </div>
+    <div class="panneau">
+      <h3>Le club Tamalou</h3>
+      <p>Le club, dont le siège est à la mairie, organise notamment des thés dansants à la salle polyvalente Garibaldi-Serre, comme celui de l'automne, le dimanche 15 novembre 2026.</p>
+      <p><a class="lien-fleche" href="{{ '/infos-alertes/' | relative_url }}#2026-11-15-the-dansant-de-l-automne-du-club-tamalou-dimanche-15-novembre">Le thé dansant de l'automne{% include icone.html nom="fleche" %}</a></p>
+    </div>
+    <div class="panneau">
+      <h3>L'association des parents d'élèves et amis de Valette</h3>
+      <p>Elle réunit les parents des élèves et les amis de l'école du village.</p>
+    </div>
+    <div class="panneau">
+      <h3>L'association communale de chasse</h3>
+      <p>Elle organise la chasse sur le territoire de la commune.</p>
+    </div>
+  </div>
+  <div class="panneau panneau--info bloc-suite">
+    <h3>Contacter une association</h3>
+    <p>Les associations sont joignables par l'intermédiaire de la mairie, au <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a> ou à <a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a>. Les associations qui souhaitent présenter leurs activités et leurs rendez-vous sur ce site peuvent s'adresser à la mairie.</p>
+  </div>
+</section>
+
+<section class="bloc" id="salle" aria-labelledby="titre-salle">
+  <h2 id="titre-salle" class="titre-decore">La salle polyvalente Garibaldi-Serre</h2>
+  <div class="grille-asymetrique">
+    <div>
+      <p>La salle polyvalente de la commune accueille les rendez-vous des associations, comme le thé dansant de l'automne du club Tamalou.</p>
+    </div>
+    <div class="panneau">
+      <h3>Renseignements</h3>
+      <p>Pour toute question sur la salle, adressez-vous à la mairie, au <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a>.</p>
+    </div>
+  </div>
+</section>

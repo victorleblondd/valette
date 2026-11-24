@@ -1,0 +1,76 @@
+# =====================================================================
+#  INFOS & ALERTES DE LA MAIRIE
+#  La publication la plus récente se place TOUT EN HAUT de la liste.
+#
+#  Ajouter un avis en PDF :
+#    1. Déposer le fichier PDF dans le dossier  documents/infos-alertes/
+#       Nom conseillé : AAAA-MM-JJ-sujet-court.pdf  (sans accents ni espaces)
+#       (ou ajouter son adresse dans outils/fichiers-a-recuperer.txt : voir README.md)
+#    2. Copier le modèle ci-dessous tout en haut de la liste, puis le remplir.
+#
+#  - date: "AAAA-MM-JJ"               date de l'avis
+#    heure: "HH:MM"                   facultatif
+#    type: alerte                     alerte (rouge) ou info (bleu)
+#    theme: eau                       eau, travaux, vie (services et vie locale)
+#    titre: "Titre de l'avis"
+#    resume: "Une ou deux phrases qui disent l'essentiel."
+#    pdf: "AAAA-MM-JJ-sujet-court.pdf"    facultatif : nom exact du fichier déposé
+#    bandeau_jusquau: "AAAA-MM-JJ"    facultatif : bandeau rouge sur l'accueil
+#                                     jusqu'à cette date incluse (alertes)
+#    lien: "/conseil-municipal/"      facultatif : page du site à ouvrir
+#    lien_texte: "Texte du lien"      (avec « lien »)
+#
+#  Champ facultatif « texte » : le texte complet de l'avis (version lisible
+#  sans ouvrir le PDF). Les avis sans PDF affichent ce texte.
+# =====================================================================
+
+- date: "2026-11-15"
+  type: info
+  theme: vie
+  titre: "Thé dansant de l'automne du club Tamalou, dimanche 15 novembre"
+  resume: "Le club Tamalou organise son thé dansant de l'automne le dimanche 15 novembre 2026 à 14 h 30, à la salle polyvalente Garibaldi-Serre, avec Serge Monteil et Sylvie. Entrée : 8 €."
+  texte: |
+    <p>Le club Tamalou organise le <strong>thé dansant de l'automne</strong>, le <strong>dimanche 15 novembre 2026 à 14 h 30</strong>, à la salle polyvalente Garibaldi-Serre de Valette, avec Serge Monteil et Sylvie.</p>
+    <ul>
+      <li>Entrée : 8 €.</li>
+      <li>Buvette et pâtisseries.</li>
+      <li>Tombola avec le ticket d'entrée.</li>
+    </ul>
+
+- date: "2026-11-10"
+  type: info
+  theme: travaux
+  titre: "Éclairage public : réparation prévue sous quinze jours"
+  resume: "Un dysfonctionnement de l'éclairage public a été constaté sur certains secteurs de la commune. Il devrait être réparé dans les 15 jours."
+  texte: |
+    <p>Un dysfonctionnement de l'éclairage public a été constaté sur certains secteurs de la commune. Celui-ci devrait être réparé dans les 15 prochains jours.</p>
+
+- date: "2026-10-25"
+  heure: "08:55"
+  type: alerte
+  theme: travaux
+  titre: "Panne électrique sur la commune"
+  resume: "Une panne électrique est en cours sur la commune. D'après le site d'Enedis, le courant devrait être rétabli vers 11 h 30."
+  texte: |
+    <p>Une panne électrique est actuellement en cours sur la commune. D'après le site d'Enedis, un rétablissement est prévu vers <strong>11 h 30</strong>.</p>
+
+- date: "2026-09-18"
+  heure: "13:07"
+  type: alerte
+  theme: eau
+  titre: "Sécheresse : arrêté préfectoral limitant les usages de l'eau"
+  resume: "L'arrêté préfectoral n° 2026-199-DDT du 17 septembre 2026 limite provisoirement les usages de l'eau dans le Cantal. Mise à jour : au 24 novembre 2026, aucune restriction n'est en vigueur pour la commune."
+  texte: |
+    <p>La mairie relaie l'<strong>arrêté préfectoral n° 2026-199-DDT du 17 septembre 2026</strong> portant limitation provisoire des usages de l'eau dans le département du Cantal, applicable jusqu'au 31 octobre 2026 inclus. Les mesures dépendent de la zone de gestion et de l'origine de l'eau (réseau d'eau potable ou milieu naturel) : elles sont détaillées dans les annexes de l'arrêté.</p>
+    <p>Cet arrêté a ensuite été remplacé par de nouveaux arrêtés préfectoraux, applicables eux aussi jusqu'au 31 octobre 2026.</p>
+    <p><strong>Mise à jour :</strong> au 24 novembre 2026, aucune restriction des usages de l'eau n'est en vigueur pour la commune, d'après <a href="https://vigieau.gouv.fr/">vigieau.gouv.fr</a>, le site officiel de l'État.</p>
+    <p><a href="https://regleau.s3.gra.perf.cloud.ovh.net/arrete-restriction/38116/52d3fc75-f2a4-49f6-b51e-659334755ae7/AP_Limitation_2026-09-17_signe.pdf">L'arrêté du 17 septembre 2026 (PDF de la préfecture, 23 pages)</a></p>
+
+- date: "2026-09-11"
+  type: info
+  theme: vie
+  titre: "Un T5 à louer dans le bourg à partir du 1er décembre"
+  resume: "À louer à partir du 1er décembre, dans le bourg de Valette : un T5 avec une chambre et une salle de bain adaptées aux personnes à mobilité réduite. Renseignements et visites auprès de la mairie."
+  texte: |
+    <p>À louer à partir du <strong>1<sup>er</sup> décembre</strong>, dans le bourg de Valette, un agréable <strong>T5</strong> avec une chambre et une salle de bain adaptées aux personnes à mobilité réduite (PMR).</p>
+    <p>Pour plus d'informations ou pour organiser une visite, contactez la mairie de Valette au <a href="tel:+33471780041">04&nbsp;71&nbsp;78&nbsp;00&nbsp;41</a> ou à <a href="mailto:mairievalette@orange.fr">mairievalette@orange.fr</a>.</p>

@@ -1,0 +1,38 @@
+# Proposition de site internet pour la commune de Valette (Cantal)
+# Publié avec GitHub Pages (Jekyll). Voir README.md pour la mise à jour.
+
+title: "Valette"
+description: "Proposition de site internet pour la commune de Valette (Cantal, 15400) : mairie, infos et alertes, vie pratique, vie locale et patrimoine."
+lang: fr-FR
+locale: fr_FR
+
+# Adresse du site. Avec un nom de domaine : url = "https://le-domaine.fr" et baseurl = "".
+url: "https://victorleblondd.github.io"
+baseurl: "/valette"
+
+# Tant que la mairie n'a pas adopté le site :
+#   - bandeau « Proposition de site internet » en haut de chaque page ;
+#   - site non référencé par les moteurs de recherche (balise noindex) ;
+#   - mentions légales au nom de l'auteur de la proposition.
+# Une fois le site adopté par la commune : passer à false.
+# La commune n'a pas de site internet à ce jour (pas de « site_officiel_actuel »).
+proposition: true
+
+timezone: Europe/Paris
+encoding: utf-8
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - outils
