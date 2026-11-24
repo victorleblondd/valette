@@ -12,7 +12,7 @@
     {%- else -%}
     <span class="etiquette etiquette--info">Info</span>
     {%- endif %}
-    <time datetime="{{ it.date }}{% if it.heure %}T{{ it.heure }}{% endif %}">{% include date-fr.html date=it.date jour=true %}{% if it.heure %} à {{ it.heure | replace: ":", " h " }}{% endif %}</time>
+    <time datetime="{{ it.date }}{% if it.heure %}T{{ it.heure }}{% endif %}">{% include date-fr.html date=it.date jour=true %}{% if it.heure %}{% assign _h = it.heure | split: ":" %} à {{ _h[0] | plus: 0 }} h {{ _h[1] }}{% endif %}</time>
   </div>
   <h3 class="avis-titre">
     {%- if it.pdf -%}
