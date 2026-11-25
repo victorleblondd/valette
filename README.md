@@ -17,7 +17,7 @@ Aucune installation n'est nécessaire.
 - Les avis publiés par la mairie (septembre à novembre 2026) et l'annuaire de l'administration Service-Public : coordonnées et horaires de la mairie.
 - Le Répertoire national des élus (version du 20 novembre 2026) : le conseil municipal élu le 15 mars 2026 et le délégué au conseil communautaire ; la base nationale des intercommunalités (Banatic) : les groupements dont la commune est membre.
 - L'Insee (population légale 2023, répertoire Sirene pour les associations), l'annuaire de l'éducation (écoles de Valette et de Menet) et Wikipédia (géographie, histoire, patrimoine, Jacques Mallouet, château de Tautal-Bas).
-- L'office de tourisme Destination Haut Cantal (restaurants, randonnées Les Eaux vives, Les Vaches rouges et Les Hauts plateaux) et Gîtes de France (hébergements).
+- Le site de l'Auberge L'Amandine et l'office de tourisme Destination Haut Cantal (restaurants, randonnées Les Eaux vives, Les Vaches rouges et Les Hauts plateaux) et Gîtes de France (hébergements).
 - Santé.fr (pharmacie), VigiEau (sécheresse, consulté le 24 novembre 2026) et la préfecture du Cantal (arrêté du 17 septembre 2026).
 
 ## Ajouter un avis « Infos & Alertes »
